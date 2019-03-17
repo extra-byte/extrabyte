@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=xbit
+Comment=xbit P2P Cryptocurrency
+Comment[fr]=xbit, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=xbit, eşten eşe kriptografik sanal para birimi
+Exec=xbit-qt %u
+Terminal=false
+Type=Application
+Icon=xbit128
+MimeType=x-scheme-handler/xbit;
+Categories=Office;Finance;

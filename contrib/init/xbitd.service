@@ -1,0 +1,26 @@
+[Unit]
+Description=xbit's distributed currency daemon
+After=network.target
+
+[Service]
+User=xbit
+Group=xbit
+
+Type=forking
+PIDFile=/var/lib/xbitd/xbitd.pid
+
+ExecStart=/usr/bin/xbitd -daemon -pid=/var/lib/xbitd/xbitd.pid \
+          -conf=/etc/xbit/xbit.conf -datadir=/var/lib/xbitd
+
+ExecStop=-/usr/bin/xbit-cli -conf=/etc/xbit/xbit.conf \
+         -datadir=/var/lib/xbitd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
